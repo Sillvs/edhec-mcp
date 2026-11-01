@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="414" viewBox="0 0 820 414" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Claude  ·  edhec-mcp</title><desc id="d">Animated mockup with fictional sample data: What's for lunch today, and can I afford the formula?</desc>
+<style>.s0{opacity:0;animation:s0 11s infinite }@keyframes s0{0%,2.73%{opacity:0;transform:translateY(6px)}5.73%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.t1{animation:t1 11s infinite steps(40)}@keyframes t1{0%,3.64%{width:0}20.50%,100%{width:474.59999999999997px}}
+.s2{opacity:0;animation:s2 11s infinite }@keyframes s2{0%,25.95%{opacity:0;transform:translateY(6px)}28.95%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p3{transform-origin:54px 143px;animation:p3r .8s linear infinite, p3o 11s infinite}@keyframes p3r{to{transform:rotate(360deg)}}@keyframes p3o{0%,37.77%{opacity:1}38.27%,100%{opacity:0}}
+.d4{opacity:0;animation:d4 11s infinite}@keyframes d4{0%,37.77%{opacity:0}38.27%,94%{opacity:1}100%{opacity:0}}
+.s5{opacity:0;animation:s5 11s infinite }@keyframes s5{0%,40.05%{opacity:0;transform:translateY(6px)}43.05%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p6{transform-origin:54px 187px;animation:p6r .8s linear infinite, p6o 11s infinite}@keyframes p6r{to{transform:rotate(360deg)}}@keyframes p6o{0%,45.50%{opacity:1}46.00%,100%{opacity:0}}
+.d7{opacity:0;animation:d7 11s infinite}@keyframes d7{0%,45.50%{opacity:0}46.00%,94%{opacity:1}100%{opacity:0}}
+.s8{opacity:0;animation:s8 11s infinite }@keyframes s8{0%,47.77%{opacity:0;transform:translateY(6px)}50.77%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s9{opacity:0;animation:s9 11s infinite }@keyframes s9{0%,50.95%{opacity:0;transform:translateY(6px)}53.95%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s10{opacity:0;animation:s10 11s infinite }@keyframes s10{0%,53.50%{opacity:0;transform:translateY(6px)}56.50%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s11{opacity:0;animation:s11 11s infinite }@keyframes s11{0%,56.05%{opacity:0;transform:translateY(6px)}59.05%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}</style>
+<rect width="820" height="414" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+<rect width="820" height="44" rx="18" fill="#f8fafc"/><rect y="26" width="820" height="18" fill="#f8fafc"/><line x1="0" y1="44" x2="820" y2="44" stroke="#e2e8f0"/>
+<circle cx="24" cy="22" r="6" fill="#ff5f57"/><circle cx="44" cy="22" r="6" fill="#febc2e"/><circle cx="64" cy="22" r="6" fill="#28c840"/>
+<text x="410" y="27" text-anchor="middle" fill="#475569" font-size="13" font-weight="600">Claude  ·  edhec-mcp</text>
+<g class="s0">
+    <rect x="317.40000000000003" y="64" width="474.59999999999997" height="44" rx="16" fill="#0f172a"/>
+    <clipPath id="ct1"><rect class="t1" x="317.40000000000003" y="64" height="44" width="0"/></clipPath>
+    <g clip-path="url(#ct1)"><text x="337.40000000000003" y="94" fill="#fff" font-size="15">What's for lunch today, and can I afford the formula?</text></g>
+  </g>
+<g class="s2">
+      <rect x="28" y="126" width="331.6" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p3" cx="54" cy="143" r="7" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d4"><circle cx="54" cy="143" r="9" fill="#16a34a"/><path d="M49.5 143.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="134" width="91" height="18" rx="9" fill="#ea580c" opacity=".12"/>
+      <text x="79" y="147" fill="#ea580c" font-size="11.5" font-weight="700">Campus food</text>
+      <text x="169" y="148" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">resto_menu<tspan fill="#94a3b8"> {site: "edhec"}</tspan></text>
+    </g>
+<g class="s5">
+      <rect x="28" y="170" width="248.8" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p6" cx="54" cy="187" r="7" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d7"><circle cx="54" cy="187" r="9" fill="#16a34a"/><path d="M49.5 187.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="178" width="91" height="18" rx="9" fill="#ea580c" opacity=".12"/>
+      <text x="79" y="191" fill="#ea580c" font-size="11.5" font-weight="700">Campus food</text>
+      <text x="169" y="192" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">resto_balance<tspan fill="#94a3b8"></tspan></text>
+    </g>
+<g class="s8"><circle cx="40" cy="232" r="12" fill="#d97757"/><path d="M40 224 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#fff"/></g>
+<g class="s9"><text x="64" y="237" fill="#0f172a" font-size="15">Today's menu at the campus restaurant:</text></g>
+<g class="s10"><rect x="64" y="250" width="728" height="96" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <rect x="80" y="263" width="42.8" height="18" rx="9" fill="#ea580c" opacity=".14"/><text x="87" y="276" fill="#ea580c" font-size="12" font-weight="700">MAIN</text><text x="134.8" y="276" fill="#0f172a" font-size="14.5">Crispy chicken, hand-cut fries</text><text x="776" y="276" text-anchor="end" fill="#475569" font-size="14" font-weight="600">€11.00</text><rect x="80" y="289" width="57.2" height="18" rx="9" fill="#ea580c" opacity=".14"/><text x="87" y="302" fill="#ea580c" font-size="12" font-weight="700">VEGGIE</text><text x="149.2" y="302" fill="#0f172a" font-size="14.5">Red cabbage tart, green beans</text><text x="776" y="302" text-anchor="end" fill="#475569" font-size="14" font-weight="600">€11.00</text><rect x="80" y="315" width="64.4" height="18" rx="9" fill="#ea580c" opacity=".14"/><text x="87" y="328" fill="#ea580c" font-size="12" font-weight="700">FORMULA</text><text x="156.4" y="328" fill="#0f172a" font-size="14.5">Starter or dessert + main + coffee</text><text x="776" y="328" text-anchor="end" fill="#475569" font-size="14" font-weight="600">€14.00</text></g>
+<g class="s11"><text x="64" y="375" fill="#0f172a" font-size="15">Your card has <tspan font-weight="700" fill="#16a34a">€18.40</tspan>, so yes. That leaves €4.40.</text></g>
+</svg>

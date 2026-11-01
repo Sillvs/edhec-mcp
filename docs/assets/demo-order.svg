@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="440" viewBox="0 0 820 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Claude  ·  edhec-mcp  ·  two-step order</title><desc id="d">Animated mockup with fictional sample data: Pre-order a chicken wrap and an orange juice from the snack corner for 12:15.</desc>
+<style>.s0{opacity:0;animation:s0 13s infinite }@keyframes s0{0%,2.31%{opacity:0;transform:translateY(6px)}5.31%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.t1{animation:t1 13s infinite steps(40)}@keyframes t1{0%,3.08%{width:0}14.92%,100%{width:400.79999999999995px}}
+.s2{opacity:0;animation:s2 13s infinite }@keyframes s2{0%,19.54%{opacity:0;transform:translateY(6px)}22.54%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p3{transform-origin:54px 165px;animation:p3r .8s linear infinite, p3o 13s infinite}@keyframes p3r{to{transform:rotate(360deg)}}@keyframes p3o{0%,29.54%{opacity:1}30.04%,100%{opacity:0}}
+.d4{opacity:0;animation:d4 13s infinite}@keyframes d4{0%,29.54%{opacity:0}30.04%,94%{opacity:1}100%{opacity:0}}
+.s5{opacity:0;animation:s5 13s infinite }@keyframes s5{0%,31.46%{opacity:0;transform:translateY(6px)}34.46%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s6{opacity:0;animation:s6 13s infinite }@keyframes s6{0%,34.15%{opacity:0;transform:translateY(6px)}37.15%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s7{opacity:0;animation:s7 13s infinite }@keyframes s7{0%,36.31%{opacity:0;transform:translateY(6px)}39.31%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s8{opacity:0;animation:s8 13s infinite }@keyframes s8{0%,38.46%{opacity:0;transform:translateY(6px)}41.46%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s9{opacity:0;animation:s9 13s infinite }@keyframes s9{0%,45.38%{opacity:0;transform:translateY(6px)}48.38%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}</style>
+<rect width="820" height="440" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+<rect width="820" height="44" rx="18" fill="#f8fafc"/><rect y="26" width="820" height="18" fill="#f8fafc"/><line x1="0" y1="44" x2="820" y2="44" stroke="#e2e8f0"/>
+<circle cx="24" cy="22" r="6" fill="#ff5f57"/><circle cx="44" cy="22" r="6" fill="#febc2e"/><circle cx="64" cy="22" r="6" fill="#28c840"/>
+<text x="410" y="27" text-anchor="middle" fill="#475569" font-size="13" font-weight="600">Claude  ·  edhec-mcp  ·  two-step order</text>
+<g class="s0">
+    <rect x="391.20000000000005" y="64" width="400.79999999999995" height="66" rx="16" fill="#0f172a"/>
+    <clipPath id="ct1"><rect class="t1" x="391.20000000000005" y="64" height="66" width="0"/></clipPath>
+    <g clip-path="url(#ct1)"><text x="411.20000000000005" y="94" fill="#fff" font-size="15">Pre-order a chicken wrap and an orange juice</text><text x="411.20000000000005" y="116" fill="#fff" font-size="15">from the snack corner for 12:15.</text></g>
+  </g>
+<g class="s2">
+      <rect x="28" y="148" width="466" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p3" cx="54" cy="165" r="7" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d4"><circle cx="54" cy="165" r="9" fill="#16a34a"/><path d="M49.5 165.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="156" width="91" height="18" rx="9" fill="#ea580c" opacity=".12"/>
+      <text x="79" y="169" fill="#ea580c" font-size="11.5" font-weight="700">Campus food</text>
+      <text x="169" y="170" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">resto_order_prepare<tspan fill="#94a3b8"> {slot: "12:15", items: 2}</tspan></text>
+    </g>
+<g class="s5"><circle cx="40" cy="210" r="12" fill="#d97757"/><path d="M40 202 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#fff"/></g>
+<g class="s6"><text x="64" y="215" fill="#0f172a" font-size="15">Here is the order. <tspan font-weight="700">Nothing is booked yet.</tspan></text></g>
+<g class="s7"><rect x="64" y="228" width="728" height="96" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <rect x="80" y="241" width="28.4" height="18" rx="9" fill="#ea580c" opacity=".14"/><text x="87" y="254" fill="#ea580c" font-size="12" font-weight="700">1×</text><text x="120.4" y="254" fill="#0f172a" font-size="14.5">Chicken wrap</text><text x="776" y="254" text-anchor="end" fill="#475569" font-size="14" font-weight="600">€4.20</text><rect x="80" y="267" width="28.4" height="18" rx="9" fill="#ea580c" opacity=".14"/><text x="87" y="280" fill="#ea580c" font-size="12" font-weight="700">1×</text><text x="120.4" y="280" fill="#0f172a" font-size="14.5">Orange juice 25cl</text><text x="776" y="280" text-anchor="end" fill="#475569" font-size="14" font-weight="600">€1.60</text><rect x="80" y="293" width="57.2" height="18" rx="9" fill="#475569" opacity=".14"/><text x="87" y="306" fill="#475569" font-size="12" font-weight="700">PICKUP</text><text x="149.2" y="306" fill="#0f172a" font-size="14.5">Snack corner, today 12:15</text><text x="776" y="306" text-anchor="end" fill="#475569" font-size="14" font-weight="600">Total €5.80</text></g>
+<g class="s8"><rect x="64" y="336" width="158" height="36" rx="10" fill="#0f172a" stroke="#0f172a"/><text x="143" y="359" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Confirm order</text><rect x="234" y="336" width="158" height="36" rx="10" fill="#fff" stroke="#e2e8f0"/><text x="313" y="359" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="600">Cancel</text></g>
+<g class="s9"><text x="64" y="401" fill="#0f172a" font-size="15"><tspan fill="#16a34a" font-weight="700">✓ Ordered</tspan> after you confirmed. Balance now €12.60.</text></g>
+</svg>

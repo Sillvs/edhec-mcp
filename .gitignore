@@ -1,0 +1,14 @@
+node_modules/
+.edhec-mcp/
+profile/
+*.log
+.env
+.env.*
+.DS_Store
+# never commit downloaded course material or print files
+downloads/
+*.pdf
+*.docx
+
+# local README preview
+.readme-preview.html

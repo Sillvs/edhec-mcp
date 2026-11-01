@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">edhec-mcp connects Claude to Blackboard, Aurion, ePrinting and campus food</title>
+<desc id="d">Diagram: Claude in the center, linked to Blackboard (courses, files, deadlines), Aurion (timetable, grades, absences), PaperCut ePrinting (printing) and the campus food services (menu, card balance, orders).</desc>
+<style>
+.flow{animation:dash 1.2s linear infinite}@keyframes dash{to{stroke-dashoffset:-28}}
+.card{animation:pop .7s ease-out both}@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pulse{transform-origin:640px 360px;animation:pulse 2.4s ease-out infinite}@keyframes pulse{0%{transform:scale(1);opacity:.45}100%{transform:scale(1.9);opacity:0}}
+</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfaf8"/><stop offset="1" stop-color="#f1f5f9"/></linearGradient></defs>
+<rect width="1280" height="640" rx="0" fill="url(#bg)"/>
+<text x="640" y="96" text-anchor="middle" fill="#0f172a" font-size="58" font-weight="800">edhec-mcp</text>
+       <text x="640" y="146" text-anchor="middle" fill="#475569" font-size="26">Blackboard, Aurion, ePrinting and campus food in Claude</text>
+<path d="M370 265 C 505 265, 505 360, 562 360" stroke="#2563eb" stroke-width="2.5" fill="none" stroke-dasharray="6 8" class="flow" opacity=".7"/>
+      <circle r="5" fill="#2563eb"><animateMotion dur="2.2s" repeatCount="indefinite" path="M370 265 C 505 265, 505 360, 562 360" keyPoints="1;0" keyTimes="0;1" calcMode="linear"/></circle>
+<path d="M370 455 C 505 455, 505 360, 562 360" stroke="#7c3aed" stroke-width="2.5" fill="none" stroke-dasharray="6 8" class="flow" opacity=".7"/>
+      <circle r="5" fill="#7c3aed"><animateMotion dur="2.5500000000000003s" repeatCount="indefinite" path="M370 455 C 505 455, 505 360, 562 360" keyPoints="0;1" keyTimes="0;1" calcMode="linear"/></circle>
+<path d="M910 265 C 775 265, 775 360, 718 360" stroke="#059669" stroke-width="2.5" fill="none" stroke-dasharray="6 8" class="flow" opacity=".7"/>
+      <circle r="5" fill="#059669"><animateMotion dur="2.9000000000000004s" repeatCount="indefinite" path="M910 265 C 775 265, 775 360, 718 360" keyPoints="1;0" keyTimes="0;1" calcMode="linear"/></circle>
+<path d="M910 455 C 775 455, 775 360, 718 360" stroke="#ea580c" stroke-width="2.5" fill="none" stroke-dasharray="6 8" class="flow" opacity=".7"/>
+      <circle r="5" fill="#ea580c"><animateMotion dur="3.25s" repeatCount="indefinite" path="M910 455 C 775 455, 775 360, 718 360" keyPoints="0;1" keyTimes="0;1" calcMode="linear"/></circle>
+<circle class="pulse" cx="640" cy="360" r="66" fill="#d97757"/>
+<circle cx="640" cy="360" r="66" fill="#d97757"/>
+<path d="M640 330 l7 22 22 7 -22 7 -7 22 -7 -22 -22 -7 22 -7z" fill="#fff"/>
+<text x="640" y="458" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="700">Claude</text>
+<text x="640" y="480" text-anchor="middle" fill="#475569" font-size="13">via edhec-mcp</text>
+<g class="card" style="animation-delay:0s">
+    <rect x="110" y="221" width="260" height="88" rx="18" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="128" y="243" width="44" height="44" rx="12" fill="#2563eb"/>
+    <text x="150" y="273" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">B</text>
+    <text x="184" y="262" fill="#0f172a" font-size="19" font-weight="700">Blackboard</text>
+    <text x="184" y="285" fill="#475569" font-size="13">Courses · files · deadlines</text>
+  </g>
+<g class="card" style="animation-delay:0.15s">
+    <rect x="110" y="411" width="260" height="88" rx="18" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="128" y="433" width="44" height="44" rx="12" fill="#7c3aed"/>
+    <text x="150" y="463" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">A</text>
+    <text x="184" y="452" fill="#0f172a" font-size="19" font-weight="700">Aurion</text>
+    <text x="184" y="475" fill="#475569" font-size="13">Timetable · grades · absences</text>
+  </g>
+<g class="card" style="animation-delay:0.3s">
+    <rect x="910" y="221" width="260" height="88" rx="18" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="928" y="243" width="44" height="44" rx="12" fill="#059669"/>
+    <text x="950" y="273" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">P</text>
+    <text x="984" y="262" fill="#0f172a" font-size="19" font-weight="700">ePrinting</text>
+    <text x="984" y="285" fill="#475569" font-size="13">Print A4 · A3 · stapled</text>
+  </g>
+<g class="card" style="animation-delay:0.44999999999999996s">
+    <rect x="910" y="411" width="260" height="88" rx="18" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="928" y="433" width="44" height="44" rx="12" fill="#ea580c"/>
+    <text x="950" y="463" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">F</text>
+    <text x="984" y="452" fill="#0f172a" font-size="19" font-weight="700">Campus food</text>
+    <text x="984" y="475" fill="#475569" font-size="13">Menu · balance · orders</text>
+  </g>
+</svg>

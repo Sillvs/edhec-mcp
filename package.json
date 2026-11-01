@@ -1,0 +1,51 @@
+{
+  "name": "edhec-mcp",
+  "version": "0.2.0",
+  "description": "Unofficial MCP server for EDHEC students: Blackboard Learn, Aurion, PaperCut ePrinting and campus food in Claude, using your own SSO login.",
+  "type": "module",
+  "bin": {
+    "edhec-mcp": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "login": "node src/login-cli.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "playwright-core": "^1.64.1",
+    "zod": "^4.6.7"
+  },
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "claude",
+    "edhec",
+    "edhec-business-school",
+    "blackboard",
+    "blackboard-learn",
+    "aurion",
+    "papercut",
+    "student",
+    "university",
+    "ai-assistant"
+  ],
+  "files": [
+    "src",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sillvs/edhec-mcp.git"
+  },
+  "homepage": "https://github.com/Sillvs/edhec-mcp#readme"
+}
