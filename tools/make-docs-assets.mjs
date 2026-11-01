@@ -17,6 +17,7 @@ const SYSTEM = {
   aurion: { name: 'Aurion', color: C.au, letter: 'A' },
   eprint: { name: 'ePrinting', color: C.pr, letter: 'P' },
   food: { name: 'Campus food', color: C.food, letter: 'F' },
+  setup: { name: 'Setup', color: '#475569', letter: 'S' },
 };
 const FONT = `-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif`;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -223,6 +224,26 @@ chat({
       { chip: 'PDF', color: C.au, text: 'Certificat_scolarite.pdf saved to ~/Documents', right: 'ready' , rightColor: C.ok },
     ] },
     { kind: 'text', lines: ['Upload a proof in Aurion within the deadline so it does not affect your grade.'] },
+  ],
+});
+
+chat({
+  file: 'demo-install.svg', title: 'Claude  ·  install in one message', cycle: 13,
+  user: { lines: ['Install the edhec-mcp server for me:', 'https://github.com/Sillvs/edhec-mcp  …'] },
+  tools: [
+    { system: 'setup', name: 'check Node.js + Chrome', ms: 700 },
+    { system: 'setup', name: 'download + install', args: ' ~/edhec-mcp', ms: 1300 },
+    { system: 'setup', name: 'run security tests', args: ' 14 passed', ms: 900 },
+    { system: 'setup', name: 'add MCP server', args: ' "edhec"', ms: 700 },
+    { system: 'setup', name: 'open EDHEC sign-in', args: ' (you log in yourself)', ms: 1500 },
+  ],
+  answer: [
+    { kind: 'text', lines: ['<tspan font-weight="700">Done.</tspan> Restart Claude, then try one of these:'] },
+    { kind: 'card', rows: [
+      { chip: 'ASK', color: C.au, text: '"What is on my timetable this week?"' },
+      { chip: 'ASK', color: C.bb, text: '"Download my newest course files to ~/Documents/EDHEC."' },
+      { chip: 'ASK', color: C.food, text: '"What is for lunch today?"' },
+    ] },
   ],
 });
 

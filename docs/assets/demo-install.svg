@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="538" viewBox="0 0 820 538" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Claude  ·  install in one message</title><desc id="d">Animated mockup with fictional sample data: Install the edhec-mcp server for me: https://github.com/Sillvs/edhec-mcp  …</desc>
+<style>.s0{opacity:0;animation:s0 13s infinite }@keyframes s0{0%,2.31%{opacity:0;transform:translateY(6px)}5.31%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.t1{animation:t1 13s infinite steps(40)}@keyframes t1{0%,3.08%{width:0}13.31%,100%{width:351.59999999999997px}}
+.s2{opacity:0;animation:s2 13s infinite }@keyframes s2{0%,17.92%{opacity:0;transform:translateY(6px)}20.92%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p3{transform-origin:54px 165px;animation:p3r .8s linear infinite, p3o 13s infinite}@keyframes p3r{to{transform:rotate(360deg)}}@keyframes p3o{0%,23.31%{opacity:1}23.81%,100%{opacity:0}}
+.d4{opacity:0;animation:d4 13s infinite}@keyframes d4{0%,23.31%{opacity:0}23.81%,94%{opacity:1}100%{opacity:0}}
+.s5{opacity:0;animation:s5 13s infinite }@keyframes s5{0%,25.23%{opacity:0;transform:translateY(6px)}28.23%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p6{transform-origin:54px 209px;animation:p6r .8s linear infinite, p6o 13s infinite}@keyframes p6r{to{transform:rotate(360deg)}}@keyframes p6o{0%,35.23%{opacity:1}35.73%,100%{opacity:0}}
+.d7{opacity:0;animation:d7 13s infinite}@keyframes d7{0%,35.23%{opacity:0}35.73%,94%{opacity:1}100%{opacity:0}}
+.s8{opacity:0;animation:s8 13s infinite }@keyframes s8{0%,37.15%{opacity:0;transform:translateY(6px)}40.15%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p9{transform-origin:54px 253px;animation:p9r .8s linear infinite, p9o 13s infinite}@keyframes p9r{to{transform:rotate(360deg)}}@keyframes p9o{0%,44.08%{opacity:1}44.58%,100%{opacity:0}}
+.d10{opacity:0;animation:d10 13s infinite}@keyframes d10{0%,44.08%{opacity:0}44.58%,94%{opacity:1}100%{opacity:0}}
+.s11{opacity:0;animation:s11 13s infinite }@keyframes s11{0%,46.00%{opacity:0;transform:translateY(6px)}49.00%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p12{transform-origin:54px 297px;animation:p12r .8s linear infinite, p12o 13s infinite}@keyframes p12r{to{transform:rotate(360deg)}}@keyframes p12o{0%,51.38%{opacity:1}51.88%,100%{opacity:0}}
+.d13{opacity:0;animation:d13 13s infinite}@keyframes d13{0%,51.38%{opacity:0}51.88%,94%{opacity:1}100%{opacity:0}}
+.s14{opacity:0;animation:s14 13s infinite }@keyframes s14{0%,53.31%{opacity:0;transform:translateY(6px)}56.31%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p15{transform-origin:54px 341px;animation:p15r .8s linear infinite, p15o 13s infinite}@keyframes p15r{to{transform:rotate(360deg)}}@keyframes p15o{0%,64.85%{opacity:1}65.35%,100%{opacity:0}}
+.d16{opacity:0;animation:d16 13s infinite}@keyframes d16{0%,64.85%{opacity:0}65.35%,94%{opacity:1}100%{opacity:0}}
+.s17{opacity:0;animation:s17 13s infinite }@keyframes s17{0%,66.77%{opacity:0;transform:translateY(6px)}69.77%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s18{opacity:0;animation:s18 13s infinite }@keyframes s18{0%,69.46%{opacity:0;transform:translateY(6px)}72.46%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s19{opacity:0;animation:s19 13s infinite }@keyframes s19{0%,71.62%{opacity:0;transform:translateY(6px)}74.62%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}</style>
+<rect width="820" height="538" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+<rect width="820" height="44" rx="18" fill="#f8fafc"/><rect y="26" width="820" height="18" fill="#f8fafc"/><line x1="0" y1="44" x2="820" y2="44" stroke="#e2e8f0"/>
+<circle cx="24" cy="22" r="6" fill="#ff5f57"/><circle cx="44" cy="22" r="6" fill="#febc2e"/><circle cx="64" cy="22" r="6" fill="#28c840"/>
+<text x="410" y="27" text-anchor="middle" fill="#475569" font-size="13" font-weight="600">Claude  ·  install in one message</text>
+<g class="s0">
+    <rect x="440.40000000000003" y="64" width="351.59999999999997" height="66" rx="16" fill="#0f172a"/>
+    <clipPath id="ct1"><rect class="t1" x="440.40000000000003" y="64" height="66" width="0"/></clipPath>
+    <g clip-path="url(#ct1)"><text x="460.40000000000003" y="94" fill="#fff" font-size="15">Install the edhec-mcp server for me:</text><text x="460.40000000000003" y="116" fill="#fff" font-size="15">https://github.com/Sillvs/edhec-mcp  …</text></g>
+  </g>
+<g class="s2">
+      <rect x="28" y="148" width="317.2" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p3" cx="54" cy="165" r="7" fill="none" stroke="#475569" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d4"><circle cx="54" cy="165" r="9" fill="#16a34a"/><path d="M49.5 165.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="156" width="49" height="18" rx="9" fill="#475569" opacity=".12"/>
+      <text x="79" y="169" fill="#475569" font-size="11.5" font-weight="700">Setup</text>
+      <text x="127" y="170" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">check Node.js + Chrome<tspan fill="#94a3b8"></tspan></text>
+    </g>
+<g class="s5">
+      <rect x="28" y="192" width="365.99999999999994" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p6" cx="54" cy="209" r="7" fill="none" stroke="#475569" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d7"><circle cx="54" cy="209" r="9" fill="#16a34a"/><path d="M49.5 209.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="200" width="49" height="18" rx="9" fill="#475569" opacity=".12"/>
+      <text x="79" y="213" fill="#475569" font-size="11.5" font-weight="700">Setup</text>
+      <text x="127" y="214" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">download + install<tspan fill="#94a3b8"> ~/edhec-mcp</tspan></text>
+    </g>
+<g class="s8">
+      <rect x="28" y="236" width="352.79999999999995" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p9" cx="54" cy="253" r="7" fill="none" stroke="#475569" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d10"><circle cx="54" cy="253" r="9" fill="#16a34a"/><path d="M49.5 253.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="244" width="49" height="18" rx="9" fill="#475569" opacity=".12"/>
+      <text x="79" y="257" fill="#475569" font-size="11.5" font-weight="700">Setup</text>
+      <text x="127" y="258" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">run security tests<tspan fill="#94a3b8"> 14 passed</tspan></text>
+    </g>
+<g class="s11">
+      <rect x="28" y="280" width="309.2" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p12" cx="54" cy="297" r="7" fill="none" stroke="#475569" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d13"><circle cx="54" cy="297" r="9" fill="#16a34a"/><path d="M49.5 297.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="288" width="49" height="18" rx="9" fill="#475569" opacity=".12"/>
+      <text x="79" y="301" fill="#475569" font-size="11.5" font-weight="700">Setup</text>
+      <text x="127" y="302" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">add MCP server<tspan fill="#94a3b8"> "edhec"</tspan></text>
+    </g>
+<g class="s14">
+      <rect x="28" y="324" width="431.99999999999994" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p15" cx="54" cy="341" r="7" fill="none" stroke="#475569" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d16"><circle cx="54" cy="341" r="9" fill="#16a34a"/><path d="M49.5 341.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="332" width="49" height="18" rx="9" fill="#475569" opacity=".12"/>
+      <text x="79" y="345" fill="#475569" font-size="11.5" font-weight="700">Setup</text>
+      <text x="127" y="346" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">open EDHEC sign-in<tspan fill="#94a3b8"> (you log in yourself)</tspan></text>
+    </g>
+<g class="s17"><circle cx="40" cy="386" r="12" fill="#d97757"/><path d="M40 378 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#fff"/></g>
+<g class="s18"><text x="64" y="391" fill="#0f172a" font-size="15"><tspan font-weight="700">Done.</tspan> Restart Claude, then try one of these:</text></g>
+<g class="s19"><rect x="64" y="404" width="728" height="96" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <rect x="80" y="417" width="35.6" height="18" rx="9" fill="#7c3aed" opacity=".14"/><text x="87" y="430" fill="#7c3aed" font-size="12" font-weight="700">ASK</text><text x="127.6" y="430" fill="#0f172a" font-size="14.5">"What is on my timetable this week?"</text><rect x="80" y="443" width="35.6" height="18" rx="9" fill="#2563eb" opacity=".14"/><text x="87" y="456" fill="#2563eb" font-size="12" font-weight="700">ASK</text><text x="127.6" y="456" fill="#0f172a" font-size="14.5">"Download my newest course files to ~/Documents/EDHEC."</text><rect x="80" y="469" width="35.6" height="18" rx="9" fill="#ea580c" opacity=".14"/><text x="87" y="482" fill="#ea580c" font-size="12" font-weight="700">ASK</text><text x="127.6" y="482" fill="#0f172a" font-size="14.5">"What is for lunch today?"</text></g>
+</svg>
