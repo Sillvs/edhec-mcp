@@ -27,13 +27,27 @@ It runs on your own computer and signs in with your normal EDHEC Microsoft login
 > **Where to paste it:** in the **Claude desktop app, open the *Code* tab** (or use Claude Code, Cursor or any AI agent that can work on your computer). The normal chat can't install software.
 
 ```text
-Please install the edhec-mcp server for me: https://github.com/Sillvs/edhec-mcp
+Please install the edhec-mcp server for me:
+https://github.com/Sillvs/edhec-mcp
 
-1. Check that Node.js 20 or newer and Google Chrome are installed. If one is missing, give me the download link, explain it in simple words and wait until I'm done.
-2. Download the project into a folder called "edhec-mcp" in my home folder (if it already exists, update it with git pull). Then run "npm ci" and "npm test" there and make sure all tests pass.
-3. Add it as an MCP server named "edhec" with the full path to src/index.js: for Claude Code use "claude mcp add --scope user edhec -- node <full path>/src/index.js". If I also use the Claude Desktop chat, add it to claude_desktop_config.json under "mcpServers" too (make a backup first and keep my other servers).
-4. Run "npm run login" in that folder. A Chrome window opens and I will sign in with my EDHEC account myself. Never ask me for my password.
-5. When it's done, tell me to restart Claude and give me three things I can ask, for example about my timetable, my courses and today's lunch menu.
+1. Check that Node.js 20 or newer and Google Chrome are installed.
+   If one is missing, give me the download link, explain it in
+   simple words and wait until I'm done.
+2. Download the project into a folder called "edhec-mcp" in my
+   home folder (if it already exists, update it with git pull).
+   Run "npm ci" and "npm test" there and make sure all tests pass.
+3. Add it as an MCP server named "edhec" with the full path to
+   src/index.js. For Claude Code use:
+   claude mcp add --scope user edhec -- node <full path>/src/index.js
+   If I also use the Claude Desktop chat, add it to
+   claude_desktop_config.json under "mcpServers" too
+   (make a backup first and keep my other servers).
+4. Run "npm run login" in that folder. A Chrome window opens and
+   I will sign in with my EDHEC account myself.
+   Never ask me for my password.
+5. When it's done, tell me to restart Claude and give me three
+   things I can ask, e.g. about my timetable, my courses and
+   today's lunch menu.
 ```
 
 <img src="docs/assets/demo-install.svg" width="820" alt="Claude installs edhec-mcp from one pasted message: checks Node.js and Chrome, installs, runs the tests, adds the MCP server and opens the EDHEC sign-in">
@@ -44,7 +58,9 @@ Please install the edhec-mcp server for me: https://github.com/Sillvs/edhec-mcp
 **Update:**
 
 ```text
-Update my edhec-mcp server: run "git pull", "npm ci" and "npm test" in the edhec-mcp folder in my home folder, then tell me to restart Claude.
+Update my edhec-mcp server: in the edhec-mcp folder in my home
+folder run "git pull", "npm ci" and "npm test", then tell me
+to restart Claude.
 ```
 
 **Signed out?** Just ask Claude *"Sign me in to EDHEC again"*. It opens the sign-in window for you.
@@ -52,7 +68,10 @@ Update my edhec-mcp server: run "git pull", "npm ci" and "npm test" in the edhec
 **Remove:**
 
 ```text
-Remove the edhec-mcp server: run "claude mcp remove --scope user edhec", remove "edhec" from claude_desktop_config.json if it is there, then delete the edhec-mcp folder and the .edhec-mcp folder in my home folder.
+Remove the edhec-mcp server: run
+"claude mcp remove --scope user edhec", remove "edhec" from
+claude_desktop_config.json if it is there, then delete the
+"edhec-mcp" and ".edhec-mcp" folders in my home folder.
 ```
 
 </details>
