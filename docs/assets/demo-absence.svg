@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="510" viewBox="0 0 820 510" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Claude  ·  edhec-mcp  ·  absences</title><desc id="d">Animated mockup with fictional sample data: I was sick this morning and missed the Finance quiz. Here is my doctor note. What do I need to do?</desc>
+<style>.s0{opacity:0;animation:s0 14s infinite }@keyframes s0{0%,2.14%{opacity:0;transform:translateY(6px)}5.14%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.t1{animation:t1 14s infinite steps(40)}@keyframes t1{0%,2.86%{width:0}15.86%,100%{width:466.4px}}
+.s2{opacity:0;animation:s2 14s infinite }@keyframes s2{0%,20.14%{opacity:0;transform:translateY(6px)}23.14%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p3{transform-origin:54px 165px;animation:p3r .8s linear infinite, p3o 14s infinite}@keyframes p3r{to{transform:rotate(360deg)}}@keyframes p3o{0%,28.71%{opacity:1}29.21%,100%{opacity:0}}
+.d4{opacity:0;animation:d4 14s infinite}@keyframes d4{0%,28.71%{opacity:0}29.21%,94%{opacity:1}100%{opacity:0}}
+.s5{opacity:0;animation:s5 14s infinite }@keyframes s5{0%,30.50%{opacity:0;transform:translateY(6px)}33.50%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.p6{transform-origin:54px 209px;animation:p6r .8s linear infinite, p6o 14s infinite}@keyframes p6r{to{transform:rotate(360deg)}}@keyframes p6o{0%,36.93%{opacity:1}37.43%,100%{opacity:0}}
+.d7{opacity:0;animation:d7 14s infinite}@keyframes d7{0%,36.93%{opacity:0}37.43%,94%{opacity:1}100%{opacity:0}}
+.s8{opacity:0;animation:s8 14s infinite }@keyframes s8{0%,38.71%{opacity:0;transform:translateY(6px)}41.71%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s9{opacity:0;animation:s9 14s infinite }@keyframes s9{0%,41.21%{opacity:0;transform:translateY(6px)}44.21%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s10{opacity:0;animation:s10 14s infinite }@keyframes s10{0%,43.21%{opacity:0;transform:translateY(6px)}46.21%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s11{opacity:0;animation:s11 14s infinite }@keyframes s11{0%,45.21%{opacity:0;transform:translateY(6px)}48.21%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+.s12{opacity:0;animation:s12 14s infinite }@keyframes s12{0%,51.64%{opacity:0;transform:translateY(6px)}54.64%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}</style>
+<rect width="820" height="510" rx="18" fill="#ffffff" stroke="#e2e8f0"/>
+<rect width="820" height="44" rx="18" fill="#f8fafc"/><rect y="26" width="820" height="18" fill="#f8fafc"/><line x1="0" y1="44" x2="820" y2="44" stroke="#e2e8f0"/>
+<circle cx="24" cy="22" r="6" fill="#ff5f57"/><circle cx="44" cy="22" r="6" fill="#febc2e"/><circle cx="64" cy="22" r="6" fill="#28c840"/>
+<text x="410" y="27" text-anchor="middle" fill="#475569" font-size="13" font-weight="600">Claude  ·  edhec-mcp  ·  absences</text>
+<g class="s0">
+    <rect x="325.6" y="64" width="466.4" height="66" rx="16" fill="#0f172a"/>
+    <clipPath id="ct1"><rect class="t1" x="325.6" y="64" height="66" width="0"/></clipPath>
+    <g clip-path="url(#ct1)"><text x="345.6" y="94" fill="#fff" font-size="15">I was sick this morning and missed the Finance quiz.</text><text x="345.6" y="116" fill="#fff" font-size="15">Here is my doctor note. What do I need to do?</text></g>
+  </g>
+<g class="s2">
+      <rect x="28" y="148" width="302" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p3" cx="54" cy="165" r="7" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d4"><circle cx="54" cy="165" r="9" fill="#16a34a"/><path d="M49.5 165.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="156" width="56" height="18" rx="9" fill="#7c3aed" opacity=".12"/>
+      <text x="79" y="169" fill="#7c3aed" font-size="11.5" font-weight="700">Aurion</text>
+      <text x="134" y="170" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">aurion_absence_check<tspan fill="#94a3b8"></tspan></text>
+    </g>
+<g class="s5">
+      <rect x="28" y="192" width="389.79999999999995" height="34" rx="17" fill="#fff" stroke="#e2e8f0"/>
+      <circle class="p6" cx="54" cy="209" r="7" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="30 14"/>
+      <g class="d7"><circle cx="54" cy="209" r="9" fill="#16a34a"/><path d="M49.5 209.5 l3 3 l6 -6.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
+      <rect x="72" y="200" width="56" height="18" rx="9" fill="#7c3aed" opacity=".12"/>
+      <text x="79" y="213" fill="#7c3aed" font-size="11.5" font-weight="700">Aurion</text>
+      <text x="134" y="214" fill="#0f172a" font-size="13.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">aurion_absence_prepare<tspan fill="#94a3b8"> {files: 1}</tspan></text>
+    </g>
+<g class="s8"><circle cx="40" cy="254" r="12" fill="#d97757"/><path d="M40 246 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#fff"/></g>
+<g class="s9"><text x="64" y="259" fill="#0f172a" font-size="15">A quiz was scheduled, so a proof is <tspan font-weight="700">required within 48 h</tspan>. Here is the report:</text></g>
+<g class="s10"><rect x="64" y="272" width="728" height="122" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <rect x="80" y="285" width="42.8" height="18" rx="9" fill="#7c3aed" opacity=".14"/><text x="87" y="298" fill="#7c3aed" font-size="12" font-weight="700">WHEN</text><text x="134.8" y="298" fill="#0f172a" font-size="14.5">Tue 10 Nov, 09:00 to 12:00</text><text x="776" y="298" text-anchor="end" fill="#b45309" font-size="14" font-weight="600">46 h left</text><rect x="80" y="311" width="57.2" height="18" rx="9" fill="#7c3aed" opacity=".14"/><text x="87" y="324" fill="#7c3aed" font-size="12" font-weight="700">REASON</text><text x="149.2" y="324" fill="#0f172a" font-size="14.5">"Fever, saw a doctor this morning" (your words)</text><rect x="80" y="337" width="42.8" height="18" rx="9" fill="#7c3aed" opacity=".14"/><text x="87" y="350" fill="#7c3aed" font-size="12" font-weight="700">QUIZ</text><text x="134.8" y="350" fill="#0f172a" font-size="14.5">Corporate Finance · in-class quiz</text><text x="776" y="350" text-anchor="end" fill="#475569" font-size="14" font-weight="600">declared</text><rect x="80" y="363" width="50" height="18" rx="9" fill="#475569" opacity=".14"/><text x="87" y="376" fill="#475569" font-size="12" font-weight="700">PROOF</text><text x="142" y="376" fill="#0f172a" font-size="14.5">doctor-note.pdf</text><text x="776" y="376" text-anchor="end" fill="#475569" font-size="14" font-weight="600">1 file</text></g>
+<g class="s11"><rect x="64" y="406" width="158" height="36" rx="10" fill="#0f172a" stroke="#0f172a"/><text x="143" y="429" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Send to Front Office</text><rect x="234" y="406" width="158" height="36" rx="10" fill="#fff" stroke="#e2e8f0"/><text x="313" y="429" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="600">Change</text></g>
+<g class="s12"><text x="64" y="471" fill="#0f172a" font-size="15"><tspan fill="#16a34a" font-weight="700">✓ Sent</tspan> and visible in My proofs of absence.</text></g>
+</svg>

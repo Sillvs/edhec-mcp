@@ -247,6 +247,26 @@ chat({
   ],
 });
 
+chat({
+  file: 'demo-absence.svg', title: 'Claude  ·  edhec-mcp  ·  absences', cycle: 14,
+  user: { lines: ['I was sick this morning and missed the Finance quiz.', 'Here is my doctor note. What do I need to do?'] },
+  tools: [
+    { system: 'aurion', name: 'aurion_absence_check', ms: 1200 },
+    { system: 'aurion', name: 'aurion_absence_prepare', args: ' {files: 1}', ms: 900 },
+  ],
+  answer: [
+    { kind: 'text', lines: ['A quiz was scheduled, so a proof is <tspan font-weight="700">required within 48 h</tspan>. Here is the report:'] },
+    { kind: 'card', rows: [
+      { chip: 'WHEN', color: C.au, text: 'Tue 10 Nov, 09:00 to 12:00', right: '46 h left', rightColor: C.warn },
+      { chip: 'REASON', color: C.au, text: '"Fever, saw a doctor this morning" (your words)' },
+      { chip: 'QUIZ', color: C.au, text: 'Corporate Finance · in-class quiz', right: 'declared' },
+      { chip: 'PROOF', color: C.sub, text: 'doctor-note.pdf', right: '1 file' },
+    ] },
+    { kind: 'buttons', items: [{ label: 'Send to Front Office', primary: true }, { label: 'Change' }], gap: 0.9 },
+    { kind: 'text', lines: ['<tspan fill="' + C.ok + '" font-weight="700">✓ Sent</tspan> and visible in My proofs of absence.'] },
+  ],
+});
+
 // ---------------------------------------------------------------------------
 // Hero: Claude in the middle, the four EDHEC systems around it.
 // ---------------------------------------------------------------------------

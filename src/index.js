@@ -9,10 +9,11 @@ import * as bb from './blackboard.js';
 import * as pc from './eprint.js';
 import * as au from './aurion.js';
 import * as rs from './resto.js';
+import * as ab from './absence.js';
 import { interactiveLogin, closeBrowser } from './browser.js';
 import { redact, UNTRUSTED_NOTE } from './safety.js';
 
-const server = new McpServer({ name: 'edhec', version: '0.2.0' });
+const server = new McpServer({ name: 'edhec', version: '0.3.0' });
 
 // Every result is redacted (defence in depth) and marked as untrusted data.
 // Results may carry images in `__images` (e.g. menu pages); they are returned as MCP image content.
@@ -158,6 +159,44 @@ tool('aurion_certificate', {
   input: { destDir: z.string().max(1000).describe('Absolute local folder, e.g. ~/Documents/EDHEC/Admin') },
   annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
 }, (a) => au.attendanceCertificate(a));
+
+// --- Aurion absences (sensitive) ---
+tool('aurion_absence_check', {
+  title: 'Check my absences',
+  description: 'Read-only. Lists your recorded absences and, for each one, whether an assessment was scheduled (Aurion timetable, Blackboard due dates), the 48-hour proof deadline, whether a proof is already on file, and what to do. Includes EDHEC attendance rules with their source. Rules can differ by programme: tell the user to check their own Programme Rules.',
+  annotations: READ,
+}, () => ab.check());
+
+tool('aurion_absence_prepare', {
+  title: 'Prepare an absence report',
+  description: [
+    'Validates an absence report and returns the exact text and files that would be sent to the EDHEC HUB Front Office, plus a confirmationId (valid 10 minutes). Nothing is sent.',
+    'Use ONLY the reason and proof files the user gave you, in their words. Never invent, embellish or change a reason, never declare an assessment the user did not mention, and never create, edit or fake a document.',
+    'Proofs: pdf, jpg, jpeg or png, in English or French, 1 or 2 files.',
+    'If several assessments were missed, prepare one report per assessment.',
+  ].join(' '),
+  input: {
+    start: z.string().describe('Start of the absence, YYYY-MM-DDTHH:MM (local time)'),
+    end: z.string().describe('End of the absence, YYYY-MM-DDTHH:MM (local time)'),
+    reason: z.string().min(5).max(1500).describe("The user's own reason, unchanged"),
+    files: z.array(z.string().max(1000)).min(1).max(2).describe('Absolute paths to the proof files'),
+    assessment: z.object({
+      date: z.string().describe('YYYY-MM-DD, inside the absence'),
+      courseCode: z.string().describe('Course code of the assessed course'),
+    }).optional().describe('Only if an assessment really was scheduled during the absence'),
+  },
+  annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: false },
+}, (a) => ab.prepare(a));
+
+tool('aurion_absence_submit', {
+  title: 'Submit the prepared absence report',
+  description: 'Sends exactly the report from aurion_absence_prepare to Aurion (official request to the HUB Front Office). ONLY call this after showing the user the prepared report and getting an explicit "yes, send it" for that exact report in this conversation. Works once per confirmationId; refuses if it expired or a file changed. Use dryRun=true to fill and check the form without uploading or submitting anything.',
+  input: {
+    confirmationId: z.string().describe('From aurion_absence_prepare'),
+    dryRun: z.boolean().optional().describe('Fill and verify the form only. Nothing is uploaded or submitted.'),
+  },
+  annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: true },
+}, (a) => ab.submit(a));
 
 // --- Campus food: ALL La Catho + MONEWEB (read-only) ---
 tool('resto_balance', {

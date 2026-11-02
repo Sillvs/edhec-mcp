@@ -14,7 +14,7 @@ It runs on your own computer and signs in with your normal EDHEC Microsoft login
 
 <img src="docs/assets/hero.svg" width="900" alt="edhec-mcp connects Claude to Blackboard, Aurion, ePrinting and the campus food services">
 
-[Install in one message](#install-in-one-message) · [What you can ask](#what-you-can-ask) · [All tools](#all-tools) · [Security](#security-and-privacy) · [FAQ](#faq)
+[Install in one message](#install-in-one-message) · [What you can ask](#what-you-can-ask) · [All tools](#all-tools) · [Absences](#absences-at-edhec) · [Security](#security-and-privacy) · [FAQ](#faq)
 
 </div>
 
@@ -87,7 +87,7 @@ Prefer to do it by hand? See the [manual setup](#manual-setup).
 | | System | What Claude can do with it |
 |---|---|---|
 | <img src="https://img.shields.io/badge/B-2563eb?style=for-the-badge" alt="Blackboard"> | **Blackboard Learn** (learning.edhec.edu) | List courses, read content and announcements, download all files, see grades and deadlines |
-| <img src="https://img.shields.io/badge/A-7c3aed?style=for-the-badge" alt="Aurion"> | **Aurion** (aurion.edhec.edu) | Timetable with rooms, grades, absences, free rooms right now, school certificate PDF |
+| <img src="https://img.shields.io/badge/A-7c3aed?style=for-the-badge" alt="Aurion"> | **Aurion** (aurion.edhec.edu) | Timetable with rooms, grades, absences and absence reports, free rooms right now, school certificate PDF |
 | <img src="https://img.shields.io/badge/P-059669?style=for-the-badge" alt="ePrinting"> | **PaperCut ePrinting** (eprinting.edhec.edu) | Print A4, A3 or stapled, check your print quota, cancel jobs |
 | <img src="https://img.shields.io/badge/F-ea580c?style=for-the-badge" alt="Campus food"> | **Campus food** (ALL La Catho · MONEWEB) | Today's menu, card balance and history, snack-corner pre-orders *(beta)* |
 
@@ -127,6 +127,12 @@ The menu is published as a PDF. The server hands Claude the pages as images, so 
 
 Ordering always takes **two steps**. Claude first shows items, prices, pickup time and your balance afterwards. Nothing is booked until you confirm that exact summary. Snack-corner ordering is only open in the morning (until about 10:00).
 
+### "I was sick, what do I do?"
+
+<img src="docs/assets/demo-absence.svg" width="820" alt="Claude checks an absence against assessments and the 48-hour rule, prepares a report with the student's own reason and doctor's note, and only sends it after confirmation">
+
+Claude checks whether an assessment was scheduled, how much of the 48-hour window is left and whether a proof is already on file. It then prepares the report with **your own words and your own document** and sends it to the HUB Front Office only after you confirm. [How absences work at EDHEC](#absences-at-edhec)
+
 ### "Admin stuff, done"
 
 <img src="docs/assets/demo-admin.svg" width="820" alt="Claude lists absences from Aurion and downloads the school attendance certificate">
@@ -165,6 +171,7 @@ Copy any of these into Claude once the server is [installed](#install-in-one-mes
 - *List every graded item in all my courses with points and due dates.*
 - *Show my grades and any resit sessions.*
 - *Do I have absences that could affect my grade? Which ones still need a proof?*
+- *I missed today's quiz because I was sick. Here is my doctor's note: ~/Downloads/note.pdf. Prepare the absence report.*
 
 </details>
 
@@ -271,13 +278,16 @@ If your session ever expires, Claude tells you and can call `edhec_login` to ope
 </details>
 
 <details open>
-<summary><b>Aurion</b> · 3 tools</summary>
+<summary><b>Aurion</b> · 6 tools</summary>
 
 | Tool | What it does | Changes anything? |
 |---|---|---|
 | `aurion_timetable` | Classes between two dates: course, room, teacher, type, on campus or online | No |
 | `aurion_view` | `grades`, `resit_grades`, `resit_sessions`, `absences`, `proofs_of_absence`, `optional_courses`, `options`, `lv2_courses`, `groups`, `rooms_now`, `rooms_morning`, `rooms_afternoon`, `academic_calendar` | No |
 | `aurion_certificate` | Downloads your school attendance certificate (PDF) | Writes a file on your disk |
+| `aurion_absence_check` | Your absences with assessment check, 48 h deadline, proof status and advice | No |
+| `aurion_absence_prepare` | Validates a report (your reason, your proof files) and shows exactly what would be sent | No |
+| `aurion_absence_submit` | Sends that exact report once, after you confirmed it (`dryRun` fills the form without sending) | **Yes**, official request |
 
 </details>
 
@@ -317,7 +327,7 @@ If your session ever expires, Claude tells you and can call `edhec_login` to ope
 
 </details>
 
-The server never submits assignments, takes tests, posts in discussions, reports absences or tops up your card.
+The server never submits assignments, takes tests, posts in discussions or tops up your card. Absence reports are only sent after you confirm the exact report.
 
 ---
 
@@ -346,11 +356,28 @@ This server acts **as you**, so it is built to be boring and safe.
 | Writing into sensitive folders | Downloads into `~/.ssh`, `~/.config`, `~/Library`, `~/.claude`, your home folder itself and system folders are refused. |
 | Printing your secrets | Only documents and images can be printed. Hidden folders and secret stores are refused, symlinks are resolved first. |
 | Prompt injection | Course texts are marked as untrusted data. There is no tool that can send your files anywhere except EDHEC printers. |
+| Absence reports | Only your own reason and your own files are sent, never rewritten or generated. One report per confirmation, valid 10 minutes, refused if a file changed. The form is read back and checked before anything is sent. |
 | Spending money | Ordering needs a fresh, single-use confirmation that matches the summary you saw, expires after 10 minutes and is refused above your balance. |
 
-All tools declare MCP `readOnlyHint` / `destructiveHint`. **Recommendation:** in Claude Code, allow read-only tools if you like, but keep `eprint_submit`, `eprint_cancel` and `resto_order_confirm` on *ask every time*.
+All tools declare MCP `readOnlyHint` / `destructiveHint`. **Recommendation:** in Claude Code, allow read-only tools if you like, but keep `eprint_submit`, `eprint_cancel`, `aurion_absence_submit` and `resto_order_confirm` on *ask every time*.
 
 Run the checks yourself with `npm test`. Found a problem? See [SECURITY.md](SECURITY.md).
+
+---
+
+## Absences at EDHEC
+
+Absences are sensitive: a missed assessment without an accepted proof counts as **0/20**. This is how the rules read for the MSc programmes in 2026-27 (Programme Rules and Welcome Session on Blackboard > *Programme Life*, and Aurion > *How to report my absences*). **Rules can differ by programme, so always check your own Programme Rules.**
+
+| Situation | Proof needed? | What happens without one |
+|---|---|---|
+| Normal class, no assessment | No, but the absence is recorded | Can affect participation. Too many absences can send you straight to the resit (capped at 10/20). |
+| Class with an assessment (quiz, midterm, exam, graded presentation) | **Yes, within 48 h** of the start of the absence | The assessment counts as 0/20 |
+| Assessment missed for an accepted reason | Yes, within 48 h | Resit **without** the 10/20 cap |
+
+Accepted reasons for an uncapped resit: hospitalisation, a declared long-term medical condition, illness during the assessment, an assessment centre or Spring recruitment event, the death of a close family member, or force majeure approved by the Programme Team. Proofs must be in English or French (pdf, jpg, jpeg or png). If you were ill during several assessments, send one report per assessment.
+
+`aurion_absence_check` applies these rules to your record and tells you, per absence, whether a proof is needed and how much time is left. Claude never invents a reason or creates a document for you.
 
 ---
 

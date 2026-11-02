@@ -25,12 +25,12 @@ export const VIEWS = {
   academic_calendar: ['Schedule', 'My academic calendar'],
 };
 
-async function hideSpinner(page) {
+export async function hideSpinner(page) {
   await page.evaluate(() => { try { window.PF && PF('modalePatientez') && PF('modalePatientez').hide(); } catch { /* ignore */ } }).catch(() => {});
 }
 
 // Open Aurion signed in (Microsoft SSO goes through by itself when the session cookie is valid).
-async function aurionPage(c) {
+export async function aurionPage(c) {
   const page = await c.newPage();
   await page.goto(AU, { waitUntil: 'domcontentloaded', timeout: 60000 });
   for (let i = 0; i < 30; i++) {
@@ -50,7 +50,7 @@ const clickMenu = (page, t) => page.evaluate((t) => {
   return !!a;
 }, t).catch(() => false);
 
-async function navMenu(page, labels) {
+export async function navMenu(page, labels) {
   let prev = null;
   for (const label of labels) {
     let clicked = false;
@@ -70,7 +70,7 @@ async function navMenu(page, labels) {
 }
 
 // Read the main PrimeFaces data table, following the paginator (max 20 pages).
-async function readTable(page) {
+export async function readTable(page) {
   for (let i = 0; i < 25; i++) {
     if (await page.locator('.ui-datatable').count()) break;
     await page.waitForTimeout(800);

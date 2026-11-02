@@ -29,6 +29,7 @@ await call('eprint_status');
 await call('aurion_timetable', {});
 for (const view of ['grades', 'absences', 'rooms_now', 'groups']) await call('aurion_view', { view });
 await call('aurion_certificate', { destDir: tmp });
+await call('aurion_absence_check');
 await call('resto_balance');
 await call('resto_history', { limit: 3 });
 await call('resto_services');
@@ -38,6 +39,8 @@ await call('bb_download_files', { course: courses[0].id, destDir: path.join(os.h
 await call('bb_api_get', { path: '/v1/../../admin' }, true);
 await call('aurion_view', { view: '__proto__' }, true);
 await call('eprint_submit', { files: ['/etc/hosts'] }, true);
+await call('aurion_absence_submit', { confirmationId: '00000000-0000-0000-0000-000000000000' }, true);
+await call('aurion_absence_prepare', { start: '2026-11-02T09:00', end: '2026-11-02T08:00', reason: 'test reason', files: ['/etc/hosts'] }, true);
 await client.close();
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log(failed ? `\n${failed} FAILED` : '\nALL PASSED');

@@ -5,7 +5,18 @@ All notable changes to edhec-mcp. Dates are in Europe/Paris time.
 ## [Unreleased]
 
 ### Coming next
-- **Snack-corner pre-orders** (`resto_order_prepare`, `resto_order_confirm`): order from Claude in two steps. You see items, prices, pickup time and your balance afterwards, and nothing is booked until you confirm that exact summary. Ships after a live test of the morning ordering window.
+- **Snack-corner pre-orders** (`resto_order_prepare`, `resto_order_confirm`): order from Claude in two steps. You see items, prices, pickup time and your balance afterwards, and nothing is booked until you confirm that exact summary. The live flow (service 202 "C&C EDHEC : Le Break", formula for €1.00, order until 10:00, pickup 11:30 to 14:00) is mapped up to the formula step; product selection and the final confirmation ship after one observed live order.
+
+## [0.3.0] - 2026-11-02
+
+### Added
+- **Absences in Aurion:** `aurion_absence_check` lists your absences and tells you, per absence, whether an assessment was scheduled (Aurion timetable and Blackboard due dates), how much of the 48-hour proof window is left, whether a proof is on file, and what to do. It includes the attendance rules with their source.
+- `aurion_absence_prepare` validates a report with your own reason and proof files and shows exactly what would be sent. `aurion_absence_submit` sends that report once, after you confirmed it. `dryRun` fills and checks the form without sending anything.
+
+### Security
+- Absence reports need a single-use confirmation that expires after 10 minutes and is refused if a proof file changed after the preview.
+- The Aurion form is read back field by field (including the visible checkbox state and disabled fields) before anything is uploaded.
+- Proof files are limited to pdf, jpg, jpeg and png, 10 MB, and never read from hidden or protected folders.
 
 ## [0.2.0] - 2026-11-01
 

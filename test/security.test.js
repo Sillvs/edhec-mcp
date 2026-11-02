@@ -126,3 +126,68 @@ test('badge and student numbers are redacted', () => {
   const r = redact(JSON.stringify({ Bagde: 'FAKE0001', Matricule: '00TEST0001', Solde: 1.5 }));
   assert.ok(!r.includes('FAKE0001') && !r.includes('00TEST0001') && r.includes('1.5'), r);
 });
+
+import * as ab from '../src/absence.js';
+
+function proofFile(name = 'certificate.pdf', content = '%PDF-1.4 test') {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'edhec-abs-'));
+  const f = path.join(dir, name); fs.writeFileSync(f, content); return f;
+}
+const NOW = new Date(2026, 10, 2, 12, 0); // 2 Nov 2026 12:00 local
+const base = () => ({ start: '2026-11-02T09:00', end: '2026-11-02T12:00', reason: 'Fever, doctor visit in the morning', files: [proofFile()], now: NOW });
+
+test('absence prepare validates dates, reason and files before anything is sent', () => {
+  const ok = ab.prepare(base());
+  assert.equal(ok.sent, false);
+  assert.match(ok.confirmationId, /^[0-9a-f-]{36}$/);
+  assert.equal(ok.report.start, '2026-11-02 09:00');
+  for (const bad of [
+    { start: '02/11/2026 09:00' },                 // wrong format
+    { start: '2026-02-30T09:00' },                 // not a real date
+    { end: '2026-11-02T08:00' },                   // end before start
+    { end: '2026-12-15T08:00' },                   // more than 31 days
+    { reason: 'ill' },                             // too short
+    { files: [] },                                 // proof required
+    { files: [proofFile('a.pdf'), proofFile('b.pdf'), proofFile('c.pdf')] }, // max 2
+    { files: [proofFile('note.txt', 'x')] },       // wrong type
+    { files: [proofFile('empty.pdf', '')] },       // empty file
+    { files: ['relative.pdf'] },
+    { assessment: { date: '2026-11-05', courseCode: 'FIN_101' } },   // outside the absence
+    { assessment: { date: '2026-11-02', courseCode: 'x; DROP' } },   // bad course code
+  ]) assert.throws(() => ab.prepare({ ...base(), ...bad }), JSON.stringify(bad));
+});
+
+test('absence proofs cannot come from protected folders', () => {
+  const lib = path.join(os.homedir(), 'Library');
+  assert.throws(() => ab.checkProofFile(path.join(lib, 'x.pdf')));
+  assert.throws(() => ab.checkProofFile(path.join(os.homedir(), '.ssh', 'id.pdf')));
+});
+
+test('absence confirmation is single-use, expires and detects changed files', () => {
+  const f = proofFile();
+  const r = ab.prepare({ ...base(), files: [f], now: new Date() });
+  // dry run does not consume
+  ab.claimConfirmation(r.confirmationId, { consume: false });
+  ab.claimConfirmation(r.confirmationId, { consume: true });
+  assert.throws(() => ab.claimConfirmation(r.confirmationId), /already used/);
+
+  const r2 = ab.prepare({ ...base(), files: [proofFile()], now: new Date() });
+  assert.throws(() => ab.claimConfirmation(r2.confirmationId, { now: Date.now() + 11 * 60 * 1000 }), /expired/);
+
+  const f3 = proofFile();
+  const r3 = ab.prepare({ ...base(), files: [f3], now: new Date() });
+  fs.writeFileSync(f3, '%PDF-1.4 changed');
+  assert.throws(() => ab.claimConfirmation(r3.confirmationId), /changed after the preview/);
+
+  assert.throws(() => ab.claimConfirmation('not-a-uuid'));
+  assert.throws(() => ab.claimConfirmation('00000000-0000-0000-0000-000000000000'), /Unknown/);
+});
+
+test('absence submit refuses before opening a browser when the confirmation is invalid', () => {
+  assert.throws(() => ab.submit({ confirmationId: '00000000-0000-0000-0000-000000000000' }), /Unknown/);
+});
+
+test('late reports get a warning about the 48 h rule', () => {
+  const r = ab.prepare({ ...base(), start: '2026-10-29T10:00', end: '2026-10-29T13:00', now: NOW });
+  assert.ok(r.warnings.some(w => /48 h/.test(w)), JSON.stringify(r.warnings));
+});
