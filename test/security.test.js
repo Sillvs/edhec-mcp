@@ -191,3 +191,64 @@ test('late reports get a warning about the 48 h rule', () => {
   const r = ab.prepare({ ...base(), start: '2026-10-29T10:00', end: '2026-10-29T13:00', now: NOW });
   assert.ok(r.warnings.some(w => /48 h/.test(w)), JSON.stringify(r.warnings));
 });
+
+// --- Snack-corner orders (no network: everything here fails before a browser starts) ---
+import * as order from '../src/order.js';
+
+const PRODUCTS = [
+  { id: 4762, name: 'SANDWICH THON MAYONNAISE' },
+  { id: 3446, name: 'SANDWICH JAMBON EMMENTAL' },
+  { id: 3472, name: 'GAUFRE LIEGEOISE CHOCOLAT' },
+  { id: 3473, name: 'GAUFRE LIEGEOISE SUCRE' },
+  { id: 3466, name: 'YAOURT' },
+];
+
+test('order: product matching is exact or unambiguous, never a guess', () => {
+  assert.equal(order.matchProduct('thon mayo', PRODUCTS).id, 4762);
+  assert.equal(order.matchProduct('Gaufre liégeoise choco', PRODUCTS).id, 3472);
+  assert.equal(order.matchProduct('yaourt', PRODUCTS).id, 3466);
+  assert.equal(order.matchProduct('3446', PRODUCTS).id, 3446);
+  assert.throws(() => order.matchProduct('gaufre', PRODUCTS), /several/);
+  assert.throws(() => order.matchProduct('sandwich', PRODUCTS), /several/);
+  assert.throws(() => order.matchProduct('pizza', PRODUCTS), /not on today/);
+  assert.throws(() => order.matchProduct('   ', PRODUCTS), /Empty/);
+});
+
+test('order: uniqueKey matches the format MONEWEB expects', () => {
+  const res = { ProductLines: null, MenuMealLines: [{ Id: 147083, Quantity: 1, MenuMeal: { Id: 141 }, ProductLines: [
+    { Id: 345625, Order: 2, Product: { Id: 3466 } }, { Id: 345624, Order: 1, Product: { Id: 4762 } }, { Id: 345626, Order: 3, Product: { Id: 3472 } },
+  ] }] };
+  assert.equal(order.uniqueKey(res), '147083-141-1(345624-4762/345625-3466/345626-3472)');
+});
+
+test('order: confirmation is single use, expires and needs the confirmed total', () => {
+  const t0 = Date.now();
+  const id = order.remember({ cartId: 1, key: 'k', total: 1, items: [] }, t0);
+  assert.throws(() => order.claimConfirmation(id, 2, { now: t0 }), /total the user confirmed/);
+  assert.throws(() => order.claimConfirmation(id, undefined, { now: t0 }), /total the user confirmed/);
+  assert.throws(() => order.claimConfirmation(id, NaN, { now: t0 }), /total the user confirmed/);
+  assert.ok(order.claimConfirmation(id, 1, { now: t0 }));
+  assert.throws(() => order.claimConfirmation(id, 1, { now: t0 }), /already used/);
+
+  const id2 = order.remember({ cartId: 2, key: 'k', total: 1, items: [] }, t0);
+  assert.throws(() => order.claimConfirmation(id2, 1, { now: t0 + 11 * 60 * 1000 }), /expired/);
+  for (const bad of [undefined, '', 'x', '__proto__', '../1', '00000000-0000-0000-0000-000000000000']) {
+    assert.throws(() => order.claimConfirmation(bad, 1), /Unknown confirmationId/);
+  }
+});
+
+test('order: confirm and prepare refuse bad input before any browser starts', () => {
+  assert.throws(() => order.confirm({ confirmationId: 'nope', expectedTotalEUR: 1 }), /Unknown confirmationId/);
+  for (const sides of [undefined, 'yaourt', [], ['a', 'b', 'c', 'd', 'e']]) {
+    assert.throws(() => order.prepare({ main: 'thon', sides }), /sides/);
+  }
+  assert.throws(() => order.prepare({ main: '', sides: ['yaourt'] }), /main/);
+  assert.throws(() => order.prepare({ main: 'x'.repeat(81), sides: ['yaourt'] }), /main/);
+  assert.throws(() => order.prepare({ main: { toString: () => 'x' }, sides: ['yaourt'] }), /main/);
+  assert.throws(() => order.prepare({ main: 'thon', sides: ['yaourt', ''] }), /sides\[1\]/);
+});
+
+test('order: Paris clock is independent of the machine time zone', () => {
+  const c = order.parisClock(new Date('2026-11-03T08:59:00Z'));
+  assert.deepEqual(c, { date: '2026-11-03', time: '09:59' });
+});

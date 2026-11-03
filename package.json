@@ -1,6 +1,6 @@
 {
   "name": "edhec-mcp",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Unofficial MCP server for EDHEC students: Blackboard Learn, Aurion, PaperCut ePrinting and campus food in Claude, using your own SSO login.",
   "type": "module",
   "bin": {

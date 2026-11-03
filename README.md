@@ -125,7 +125,7 @@ The menu is published as a PDF. The server hands Claude the pages as images, so 
 
 <img src="docs/assets/demo-order.svg" width="820" alt="Two-step order: Claude prepares a snack-corner order with prices and only books it after the user confirms">
 
-Ordering always takes **two steps**. Claude first shows items, prices, pickup time and your balance afterwards. Nothing is booked until you confirm that exact summary. Snack-corner ordering is only open in the morning (until about 10:00).
+Ordering always takes **two steps**. Claude first shows the items, the total (the student formula is €1.00 once per day), your balance afterwards and where to pick it up. Nothing is booked or paid until you say yes to that exact summary. The snack corner (Le Break, building R) takes orders on the same day from 6:00 to 10:00; pickup is 11:30 to 14:00 with your student card. Paid orders cannot be cancelled.
 
 ### "I was sick, what do I do?"
 
@@ -189,7 +189,8 @@ Copy any of these into Claude once the server is [installed](#install-in-one-mes
 
 - *Show my last 10 purchases with the campus card.*
 - *What can I book through MONEWEB right now?*
-- *(beta, mornings)* *Pre-order a sandwich and a drink for 12:30 from the snack corner.*
+- *(beta, before 10:00)* *What can I order at the snack corner today?*
+- *(beta, before 10:00)* *Order my lunch at the snack corner: tuna sandwich, a yoghurt and a chocolate waffle.*
 
 </details>
 
@@ -303,7 +304,7 @@ If your session ever expires, Claude tells you and can call `edhec_login` to ope
 </details>
 
 <details open>
-<summary><b>Campus food</b> · 4 tools + 2 in beta</summary>
+<summary><b>Campus food</b> · 7 tools (3 for ordering, beta)</summary>
 
 | Tool | What it does | Changes anything? |
 |---|---|---|
@@ -311,10 +312,11 @@ If your session ever expires, Claude tells you and can call `edhec_login` to ope
 | `resto_balance` | Campus card balance and last visit | No |
 | `resto_history` | Recent purchases and top-ups | No |
 | `resto_services` | What you can book on MONEWEB right now | No |
-| `resto_order_prepare` *(beta)* | Builds a snack-corner order: items, prices, pickup slot, balance after | No |
-| `resto_order_confirm` *(beta)* | Places exactly the prepared order after you confirmed it | **Yes**, pays from your card |
+| `resto_order_offer` *(beta)* | Today's snack-corner formula, what is still in stock, order deadline | No |
+| `resto_order_prepare` *(beta)* | Builds an unpaid cart and shows items, total, discount, balance after and pickup | No payment (creates an unpaid cart that expires) |
+| `resto_order_confirm` *(beta)* | Books and pays exactly the prepared order after you said yes | **Yes**, pays from your card, cannot be cancelled |
 
-> **Beta:** the two order tools ship after a live test of the snack-corner flow (it only opens in the morning). Until then they are not part of the server. Watch the [CHANGELOG](CHANGELOG.md).
+> **Beta:** tested with real orders at EDHEC Lille (Click & Collect "Le Break"). It covers the one daily formula (1 main + 2 sides). If something looks off, order on [allresto.moneweb.fr](https://allresto.moneweb.fr) and [open an issue](https://github.com/Sillvs/edhec-mcp/issues).
 
 </details>
 
@@ -357,7 +359,7 @@ This server acts **as you**, so it is built to be boring and safe.
 | Printing your secrets | Only documents and images can be printed. Hidden folders and secret stores are refused, symlinks are resolved first. |
 | Prompt injection | Course texts are marked as untrusted data. There is no tool that can send your files anywhere except EDHEC printers. |
 | Absence reports | Only your own reason and your own files are sent, never rewritten or generated. One report per confirmation, valid 10 minutes, refused if a file changed. The form is read back and checked before anything is sent. |
-| Spending money | Ordering needs a fresh, single-use confirmation that matches the summary you saw, expires after 10 minutes and is refused above your balance. |
+| Spending money | Ordering needs a fresh, single-use confirmation (10 minutes) plus the total you confirmed. Right before paying, the cart is read again and the order is refused if any item or the total changed. Orders above €10 or above your balance are refused, and top-ups are never done by the server. |
 
 All tools declare MCP `readOnlyHint` / `destructiveHint`. **Recommendation:** in Claude Code, allow read-only tools if you like, but keep `eprint_submit`, `eprint_cancel`, `aurion_absence_submit` and `resto_order_confirm` on *ask every time*.
 

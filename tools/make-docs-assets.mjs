@@ -195,19 +195,19 @@ chat({
 
 chat({
   file: 'demo-order.svg', title: 'Claude  ·  edhec-mcp  ·  two-step order', cycle: 13,
-  user: { lines: ['Pre-order a chicken wrap and an orange juice', 'from the snack corner for 12:15.'] },
+  user: { lines: ['Order my lunch at the snack corner: tuna sandwich,', 'a yoghurt and a chocolate waffle.'] },
   tools: [
-    { system: 'food', name: 'resto_order_prepare', args: ' {slot: "12:15", items: 2}', ms: 1300 },
+    { system: 'food', name: 'resto_order_prepare', args: ' {main: "thon mayo", sides: 2}', ms: 1300 },
   ],
   answer: [
-    { kind: 'text', lines: ['Here is the order. <tspan font-weight="700">Nothing is booked yet.</tspan>'] },
+    { kind: 'text', lines: ['Here is the order. <tspan font-weight="700">Nothing is paid yet.</tspan>'] },
     { kind: 'card', rows: [
-      { chip: '1×', color: C.food, text: 'Chicken wrap', right: '€4.20' },
-      { chip: '1×', color: C.food, text: 'Orange juice 25cl', right: '€1.60' },
-      { chip: 'PICKUP', color: C.sub, text: 'Snack corner, today 12:15', right: 'Total €5.80' },
+      { chip: 'MAIN', color: C.food, text: 'Sandwich thon mayonnaise', right: '9 left' },
+      { chip: 'SIDES', color: C.food, text: 'Yaourt · Gaufre liégeoise chocolat', right: '' },
+      { chip: 'TOTAL', color: C.sub, text: 'Formula €5.30, student discount −€4.30', right: '€1.00' },
     ] },
-    { kind: 'buttons', items: [{ label: 'Confirm order', primary: true }, { label: 'Cancel' }], gap: 0.9 },
-    { kind: 'text', lines: ['<tspan fill="' + C.ok + '" font-weight="700">✓ Ordered</tspan> after you confirmed. Balance now €12.60.'] },
+    { kind: 'buttons', items: [{ label: 'Yes, order for €1.00', primary: true }, { label: 'Change' }], gap: 0.9 },
+    { kind: 'text', lines: ['<tspan fill="' + C.ok + '" font-weight="700">✓ Paid</tspan> after you said yes. Pick up 11:30 to 14:00 at Le Break.'] },
   ],
 });
 

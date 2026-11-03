@@ -34,12 +34,17 @@ await call('resto_balance');
 await call('resto_history', { limit: 3 });
 await call('resto_services');
 await call('resto_menu', { site: 'edhec' });
+// The snack corner only takes orders in the morning (Paris time); outside that window the tool must say so.
+const parisHour = Number(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Paris', hour: '2-digit', hourCycle: 'h23' }).format(new Date()));
+await call('resto_order_offer', {}, !(parisHour >= 6 && parisHour < 10));
 // must be refused
 await call('bb_download_files', { course: courses[0].id, destDir: path.join(os.homedir(), '.ssh') }, true);
 await call('bb_api_get', { path: '/v1/../../admin' }, true);
 await call('aurion_view', { view: '__proto__' }, true);
 await call('eprint_submit', { files: ['/etc/hosts'] }, true);
 await call('aurion_absence_submit', { confirmationId: '00000000-0000-0000-0000-000000000000' }, true);
+await call('resto_order_confirm', { confirmationId: '00000000-0000-0000-0000-000000000000', expectedTotalEUR: 1 }, true);
+await call('resto_order_prepare', { main: 'thon mayo', sides: [] }, true);
 await call('aurion_absence_prepare', { start: '2026-11-02T09:00', end: '2026-11-02T08:00', reason: 'test reason', files: ['/etc/hosts'] }, true);
 await client.close();
 fs.rmSync(tmp, { recursive: true, force: true });

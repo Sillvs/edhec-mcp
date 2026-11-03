@@ -1,6 +1,6 @@
 // Campus food: ALL La Catho (all-lacatho.fr, menus) and MONEWEB (allresto.moneweb.fr, card balance,
 // receipts, reservation services). Both sign in through Keycloak with the "EDHEC - Connect" button.
-// Read-only: no top-ups, payments or orders are made from here.
+// Read-only: no top-ups or payments. Snack-corner orders live in order.js and always need a confirmation.
 import fs from 'node:fs';
 import { withBrowser, NeedsLoginError } from './browser.js';
 import { checkDownloadDir, insideDir, safeName, uniquePath } from './safety.js';
@@ -33,7 +33,7 @@ async function ssoUntil(page, done, service) {
 
 // --- MONEWEB (card balance, receipts, reservations) -----------------------
 
-async function mwGet(c, p) {
+export async function mwGet(c, p) {
   const r = await c.request.get(MW + p, { failOnStatusCode: false, maxRedirects: 0, timeout: 30000 });
   return { status: r.status(), body: await r.json().catch(() => null) };
 }
@@ -42,7 +42,7 @@ async function mwPost(c, p, data) {
   return { status: r.status(), body: await r.json().catch(() => null) };
 }
 
-async function ensureMoneweb(c) {
+export async function ensureMoneweb(c) {
   const a = await mwGet(c, '/clients/api/authenticated');
   if (a.body?.Authenticated) return;
   const page = await c.newPage();
@@ -100,7 +100,7 @@ export function services() {
     if (s.status !== 200) throw new Error(`MONEWEB services ${s.status}`);
     return {
       services: (s.body || []).map(x => ({ id: x.Id, name: x.Name, canBook: x.CanCreate, description: x.Description })),
-      note: 'Click & Collect for the snack corner only shows up while ordering is open (mornings, until about 10:00). Booking from this server is not enabled yet.',
+      note: 'Click & Collect for the snack corner only shows up while ordering is open (mornings, until about 10:00). Order with resto_order_prepare, then resto_order_confirm after the user said yes.',
     };
   });
 }

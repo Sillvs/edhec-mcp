@@ -4,8 +4,16 @@ All notable changes to edhec-mcp. Dates are in Europe/Paris time.
 
 ## [Unreleased]
 
-### Coming next
-- **Snack-corner pre-orders** (`resto_order_prepare`, `resto_order_confirm`): order from Claude in two steps. You see items, prices, pickup time and your balance afterwards, and nothing is booked until you confirm that exact summary. The live flow (service 202 "C&C EDHEC : Le Break", formula for €1.00, order until 10:00, pickup 11:30 to 14:00) is mapped up to the formula step; product selection and the final confirmation ship after one observed live order.
+## [0.4.0] - 2026-11-03
+
+### Added
+- **Snack-corner pre-orders** *(beta)* for Click & Collect "Le Break" (EDHEC Lille). `resto_order_offer` shows today's formula and what is still in stock. `resto_order_prepare` builds an unpaid cart and shows the items, total, student discount, your balance afterwards and the pickup place. `resto_order_confirm` books and pays exactly that cart from your campus card, after you said yes. Orders are taken the same day until 10:00; pickup is 11:30 to 14:00.
+- The preview warns when an order would cost the full price because the €1.00 student formula was already used that day.
+
+### Security
+- Paying needs a single-use confirmation that expires after 10 minutes and the total the user confirmed. The cart is read again right before paying and the order is refused if any item or the total changed.
+- Orders above €10 or above the card balance are refused. Product names must match one product exactly or unambiguously; the server never guesses.
+- The order flow was mapped from one observed live order before it was automated.
 
 ## [0.3.0] - 2026-11-02
 
